@@ -14,8 +14,23 @@
  * limitations under the License.
  */
 
+
 #ifndef CONFIG_H
 #define CONFIG_H
+
+#include <stdint.h>
+
+/*
+ * Settings for Pebble Rocky.js
+ *  - 32-bit pointers needed for dynamic allocation.
+ *  - 32-bit floats are better for performance.
+ *  - The heap size can be changed before running.
+*/
+extern uint32_t rocky_heap_size;
+
+#define JERRY_CPOINTER_32_BIT 1
+#define CONFIG_ECMA_NUMBER_TYPE 1
+# define CONFIG_MEM_HEAP_AREA_SIZE (rocky_heap_size)
 
 /**
  * Limit of data (system heap, engine's data except engine's own heap)

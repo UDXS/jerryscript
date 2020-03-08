@@ -128,38 +128,38 @@ typedef struct
 /**
  * Global context.
  */
-extern jerry_context_t jerry_global_context;
+extern jerry_context_t* jerry_global_context;
 
 /**
  * Global heap.
  */
-extern jmem_heap_t jerry_global_heap;
+extern jmem_heap_t* jerry_global_heap;
 
 #ifndef CONFIG_ECMA_LCACHE_DISABLE
 
 /**
  * Global hash table.
  */
-extern jerry_hash_table_t jerry_global_hash_table;
+extern jerry_hash_table_t* jerry_global_hash_table;
 
 #endif /* !CONFIG_ECMA_LCACHE_DISABLE */
 
 /**
  * Provides a reference to a field in the current context.
  */
-#define JERRY_CONTEXT(field) (jerry_global_context.field)
+#define JERRY_CONTEXT(field) (jerry_global_context->field)
 
 /**
  * Provides a reference to the area field of the heap.
  */
-#define JERRY_HEAP_CONTEXT(field) (jerry_global_heap.field)
+#define JERRY_HEAP_CONTEXT(field) (jerry_global_heap->field)
 
 #ifndef CONFIG_ECMA_LCACHE_DISABLE
 
 /**
  * Provides a reference to the global hash table.
  */
-#define JERRY_HASH_TABLE_CONTEXT(field) (jerry_global_hash_table.field)
+#define JERRY_HASH_TABLE_CONTEXT(field) (jerry_global_hash_table->field)
 
 #endif /* !CONFIG_ECMA_LCACHE_DISABLE */
 
