@@ -44,7 +44,7 @@ jmem_heap_t* jerry_global_heap;
 /**
  * Global hash table.
  */
-jerry_hash_table_t jerry_global_hash_table;
+jerry_hash_table_t* jerry_global_hash_table;
 
 #endif /* !CONFIG_ECMA_LCACHE_DISABLE */
 
