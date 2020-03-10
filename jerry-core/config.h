@@ -22,16 +22,14 @@
 
 /*
  * Settings for Pebble Rocky.js
- *  - 32-bit pointers needed for dynamic allocation.
  *  - 32-bit floats are better for performance.
+ *  - Rocky runs JavaScript Bytecode Snapshots.
  *  - The heap is sized 64kb.
 */
 
-#define JERRY_CPOINTER_32_BIT 1
 #define CONFIG_ECMA_NUMBER_TYPE 1
 #define JERRY_ENABLE_SNAPSHOT_EXEC 1
-
-# define CONFIG_MEM_HEAP_AREA_SIZE (64 * 1024)
+#define CONFIG_MEM_HEAP_AREA_SIZE (64 * 1024)
 
 /**
  * Limit of data (system heap, engine's data except engine's own heap)
